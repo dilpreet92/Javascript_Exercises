@@ -4,11 +4,11 @@ function User() {
   this.age = arguments[1];
 }
 User.prototype.compare = function (collativePerson) {
-	if ((!this.name) || (!collativePerson.name)) {
-    alert("Name cannot be empty");
+  if ((!this.name) || (!collativePerson.name)) {
+    alert("User Name or Collative Person Name is empty");
   } 
   else if ((!this.age) || (!collativePerson.age) || (isNaN(this.age)) || (isNaN(collativePerson.age))) { 
-    alert("Age empty or Not numeric");
+    alert("User Age or collative Person age is empty or Non numeric");
   } 
   else if (this.age > collativePerson.age) {
     return this.name + " is older than " + collativePerson.name;
@@ -35,6 +35,6 @@ function displayResult(){
 		alert(result);
 	}
 	else {
-		alert("Try Again");
+		alert("OOPS Something Went Wrong");
 	}
 }
