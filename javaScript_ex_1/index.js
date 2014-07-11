@@ -25,16 +25,16 @@ function createObject(){
       userAge = document.getElementById("userAge").value,
       collativePersonName = document.getElementById("collativePersonName").value,
       collativePersonAge = document.getElementById("collativePersonAge").value;
-  	  user1 = new User(userName,userAge),
+      user1 = new User(userName,userAge),
       user2 = new User(collativePersonName, collativePersonAge),
   displayResult();
 }
 function displayResult(){
-	var result = user1.compare(user2);
-	if (result) {
-		alert(result);
-	}
-	else {
-		alert("OOPS Something Went Wrong");
-	}
+  var result = user1.compare(user2);
+  if (result) {
+    alert(result);
+  }
+  else {
+    alert("OOPS Something Went Wrong");
+  }
 }
