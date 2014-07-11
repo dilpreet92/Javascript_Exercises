@@ -1,5 +1,5 @@
 function User() {
-  //arguments array contains the arguments passed in the function
+  /*arguments array contains the arguments passed in the function*/
   this.name = arguments[0];
   this.age = arguments[1];
 }
