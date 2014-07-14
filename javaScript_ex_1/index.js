@@ -26,7 +26,7 @@ function createObject(){
       collativePersonName = document.getElementById("collativePersonName").value,
       collativePersonAge = document.getElementById("collativePersonAge").value;
       user1 = new User(userName,userAge),
-      user2 = new User(collativePersonName, collativePersonAge),
+      user2 = new User(collativePersonName, collativePersonAge);
   displayResult();
 }
 function displayResult(){
