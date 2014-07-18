@@ -7,10 +7,10 @@ function User() {
 User.prototype.compare = function (collativePerson) {
   var result = "";
   if ((!this.Age) || (!collativePerson.Name)) {
-    alert("User Name or Collative Person Name is empty");
+    result = "User Name or Collative Person Name is empty";
   } 
   else if ((!this.Age) || (!collativePerson.Age) || (isNaN(this.Age)) || (isNaN(collativePerson.Age))) { 
-    alert("User Age or collative Person age is empty or Non numeric");
+    result = "User Age or collative Person age is empty or Non numeric";
   } 
   else if (parseInt(this.Age) > parseInt(collativePerson.Age)) {
     result = this.Name + " is older than " + collativePerson.Name;
@@ -21,9 +21,16 @@ User.prototype.compare = function (collativePerson) {
   else {
     result = this.Name + " has age equal to " + collativePerson.Name;
   }
-  this.displayResult(result);
+  return result;
 };
-User.prototype.displayResult = function(result) {
+
+function createObject(name, age){
+  var userName = document.getElementById(name).value,
+      userAge = document.getElementById(age).value;
+      return new User(userName,userAge);  
+}
+
+function displayResult(result) {
   if (result) {
     alert(result);
   }
@@ -31,13 +38,10 @@ User.prototype.displayResult = function(result) {
     alert("OOPS Something Went Wrong");
   }
 }  
-function createObject(){
-  var userName = document.getElementById("userName").value,
-      userAge = document.getElementById("userAge").value,
-      collativePersonName = document.getElementById("collativePersonName").value,
-      collativePersonAge = document.getElementById("collativePersonAge").value;
-      user1 = new User(userName,userAge),
-      user2 = new User(collativePersonName, collativePersonAge);
-  user1.compare(user2);
-}
-document.getElementById("submitBtn").addEventListener("click",createObject);
+
+document.getElementById("submitBtn").addEventListener("click",function() {
+  user1 = createObject("userName","userAge");
+  user2 = createObject("collativePersonName","collativePersonAge");
+  var result = user1.compare(user2);
+  displayResult(result);
+});
